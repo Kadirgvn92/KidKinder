@@ -6,15 +6,17 @@
 
 @await Component.InvokeAsync("_FeaturePartial")
 
-@await Component.InvokeAsync("_PopularDestinationsPartial")
+@await Component.InvokeAsync("_FacilitiyPartial")
 
-@await Component.InvokeAsync("_SliderPartial")
+@await Component.InvokeAsync("_AboutPartial")
 
-@await Component.InvokeAsync("_StatisticsPartial")
+@await Component.InvokeAsync("_ClassesPartial")
 
-@await Component.InvokeAsync("_TestimonailPartial")
+@await Component.InvokeAsync("_RegisterPartial")
 
-@await Component.InvokeAsync("_SubAboutPartial")
+@await Component.InvokeAsync("_TeacherPartial")
+
+@await Component.InvokeAsync("_TestimonialPartial")
 
 <div class="container-fluid bg-secondary text-white mt-5 py-5 px-sm-3 px-md-5">
     <div class="row pt-5">
@@ -23,41 +25,9 @@
 
         @await Component.InvokeAsync("_ContactPartial")
 
-        <div class="col-lg-3 col-md-6 mb-5">
-            <h3 class="text-primary mb-4">Quick Links</h3>
-            <div class="d-flex flex-column justify-content-start">
-                <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>About Us</a>
-                <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our Classes</a>
-                <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our Teachers</a>
-                <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our Blog</a>
-                <a class="text-white" href="#"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
-            </div>
-        </div>
+        @await Component.InvokeAsync("_QuickPartial")
 
-        <div class="col-lg-3 col-md-6 mb-5">
-            <h3 class="text-primary mb-4">Newsletter</h3>
-            <form action="">
-                <div class="form-group">
-                    <input type="text"
-                           class="form-control border-0 py-4"
-                           placeholder="Your Name"
-                           required="required" />
-                </div>
-                <div class="form-group">
-                    <input type="email"
-                           class="form-control border-0 py-4"
-                           placeholder="Your Email"
-                           required="required" />
-                </div>
-                <div>
-                    <button class="btn btn-primary btn-block border-0 py-3"
-                            type="submit">
-                        Submit Now
-                    </button>
-                </div>
-            </form>
-        </div>
+        @await Component.InvokeAsync("_NewsletterPartial")
 
     </div>
     <div class="container-fluid pt-5"
