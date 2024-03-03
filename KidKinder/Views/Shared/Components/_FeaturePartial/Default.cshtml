@@ -1,20 +1,20 @@
-﻿
+﻿@model List<Feature>
 
 <div class="container-fluid bg-primary px-0 px-md-5 mb-5">
     <div class="row align-items-center px-3">
         <div class="col-lg-6 text-center text-lg-left">
-            <h4 class="text-white mb-4 mt-5 mt-lg-0">Eğlenceli Eğitim Merkezi</h4>
-            <h1 class="display-3 font-weight-bold text-white">
-                Ana Okulunda yeni teknolojik devrim..
-            </h1>
-            <p class="text-white mb-4">
-                STEM sınıflarıyla beraber çocuklarımızı yeni hayatlarına vizyon katarak
-                yaratıcılıklarını ortaya çıkarmak için elimizden geleni yapıyoruz. Robotik
-                kodlama ile geleceğin mesleği olan robotik ve yazılıma hazırlamayı amaçlıyoruz.
-                Bunların yanında geleneksel eğitimleride gözardı etmiyor en iyi hocalarımızla
-                eğitim öğretim hayatına da hazır olmalarını sağlıyoruz.
-            </p>
-            <a href="" class="btn btn-secondary mt-1 py-3 px-5">Daha Fazla Bilgi Alın..</a>
+            @foreach (var item in Model)
+            {
+                <h4 class="text-white mb-4 mt-5 mt-lg-0">@item.Title</h4>
+                <h1 class="display-3 font-weight-bold text-white">
+                   @item.Header
+                </h1>
+                <p class="text-white mb-4">
+                   @item.Description
+                </p>
+                <a href="" class="btn btn-secondary mt-1 py-3 px-5">Daha Fazla Bilgi Alın..</a>
+            }
+
         </div>
         <div class="col-lg-6 text-center text-lg-right">
             <img class="img-fluid mt-5" src="~/kidkinder-1.0.0/img/header.png" alt="" />
