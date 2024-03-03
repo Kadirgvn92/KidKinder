@@ -1,0 +1,18 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+@await Html.PartialAsync("~/Views/LayoutPartial/UILayoutPartial/_UIHeadPartial.cshtml")
+
+<body>
+    <!-- Navbar Start -->
+    @await Html.PartialAsync("~/Views/LayoutPartial/UILayoutPartial/_UINavbarPartial.cshtml")
+
+    @RenderBody()
+
+    @await Html.PartialAsync("~/Views/LayoutPartial/UILayoutPartial/_UIScriptPartial.cshtml")
+</body>
+</html>
