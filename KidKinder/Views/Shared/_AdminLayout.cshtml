@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+@await Html.PartialAsync("~/Views/LayoutPartial/AdminLayoutPartial/_HeadPartial.cshtml")
+
+   <body class="dashboard dashboard_1">
+      <div class="full_container">
+         <div class="inner_container">
+            @await Html.PartialAsync("~/Views/LayoutPartial/AdminLayoutPartial/_SidebarPartial.cshtml")
+         
+            <div id="content">
+                @await Html.PartialAsync("~/Views/LayoutPartial/AdminLayoutPartial/_TopbarPartial.cshtml")
+              
+               @RenderBody()
+
+            </div>
+         </div>
+      </div>
+    @await Html.PartialAsync("~/Views/LayoutPartial/AdminLayoutPartial/_ScriptPartial.cshtml")
+   </body>
+</html>
