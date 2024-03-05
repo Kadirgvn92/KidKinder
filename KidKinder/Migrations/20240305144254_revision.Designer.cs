@@ -3,6 +3,7 @@ using KidKinder.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KidKinder.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20240305144254_revision")]
+    partial class revision
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -294,9 +297,6 @@ namespace KidKinder.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("KidClassID")
-                        .HasColumnType("int");
-
                     b.Property<string>("LinkedinUrl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -306,8 +306,6 @@ namespace KidKinder.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("TeacherID");
-
-                    b.HasIndex("KidClassID");
 
                     b.ToTable("Teachers");
                 });
@@ -363,24 +361,11 @@ namespace KidKinder.Migrations
                     b.Navigation("Parents");
                 });
 
-            modelBuilder.Entity("KidKinder.Entities.Teacher", b =>
-                {
-                    b.HasOne("KidKinder.Entities.KidClass", "Class")
-                        .WithMany("Teachers")
-                        .HasForeignKey("KidClassID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Class");
-                });
-
             modelBuilder.Entity("KidKinder.Entities.KidClass", b =>
                 {
                     b.Navigation("Bookings");
 
                     b.Navigation("Kids");
-
-                    b.Navigation("Teachers");
                 });
 
             modelBuilder.Entity("KidKinder.Entities.Parent", b =>

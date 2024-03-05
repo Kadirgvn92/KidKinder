@@ -3,6 +3,7 @@ using KidKinder.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KidKinder.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20240305142829_kidss")]
+    partial class kidss
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -174,9 +177,6 @@ namespace KidKinder.Migrations
                     b.Property<short>("Age")
                         .HasColumnType("smallint");
 
-                    b.Property<int>("KidClassID")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -185,8 +185,6 @@ namespace KidKinder.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("KidID");
-
-                    b.HasIndex("KidClassID");
 
                     b.HasIndex("ParentID");
 
@@ -244,9 +242,6 @@ namespace KidKinder.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("DebtDescription")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Mail")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -257,12 +252,6 @@ namespace KidKinder.Migrations
 
                     b.Property<string>("Phone")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("SecondPhone")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TotalDebt")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ParentID");
@@ -294,9 +283,6 @@ namespace KidKinder.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("KidClassID")
-                        .HasColumnType("int");
-
                     b.Property<string>("LinkedinUrl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -306,8 +292,6 @@ namespace KidKinder.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("TeacherID");
-
-                    b.HasIndex("KidClassID");
 
                     b.ToTable("Teachers");
                 });
@@ -346,41 +330,18 @@ namespace KidKinder.Migrations
 
             modelBuilder.Entity("KidKinder.Entities.Kid", b =>
                 {
-                    b.HasOne("KidKinder.Entities.KidClass", "Class")
-                        .WithMany("Kids")
-                        .HasForeignKey("KidClassID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("KidKinder.Entities.Parent", "Parents")
                         .WithMany("Kids")
                         .HasForeignKey("ParentID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Class");
-
                     b.Navigation("Parents");
-                });
-
-            modelBuilder.Entity("KidKinder.Entities.Teacher", b =>
-                {
-                    b.HasOne("KidKinder.Entities.KidClass", "Class")
-                        .WithMany("Teachers")
-                        .HasForeignKey("KidClassID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Class");
                 });
 
             modelBuilder.Entity("KidKinder.Entities.KidClass", b =>
                 {
                     b.Navigation("Bookings");
-
-                    b.Navigation("Kids");
-
-                    b.Navigation("Teachers");
                 });
 
             modelBuilder.Entity("KidKinder.Entities.Parent", b =>

@@ -17,6 +17,8 @@ public class Context : DbContext
     public DbSet<Gallery> Galleries { get; set; }
     public DbSet<Feature> Features { get; set; }
     public DbSet<GetInTouch> GetInTouches { get; set; }
+    public DbSet<Kid> Kids { get; set; }
+    public DbSet<Parent> Parents { get; set; }
     public DbSet<Teacher> Teachers { get; set; }
     public DbSet<Testimonial> Testimonials { get; set; }
 }

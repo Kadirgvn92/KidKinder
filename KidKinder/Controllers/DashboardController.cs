@@ -13,7 +13,10 @@ public class DashboardController : Controller
 
     public IActionResult Index()
     {
-
+        var classes = _context.KidClasses.Count();
+        ViewBag.Classes = classes;
+        var teacher = _context.Teachers.Count();
+        ViewBag.Teachers = teacher;
         return View();
     }
 }

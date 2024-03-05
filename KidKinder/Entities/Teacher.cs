@@ -9,4 +9,6 @@ public class Teacher
     public string FacebookUrl { get; set; }
     public string InstagramUrl { get; set; }
     public string LinkedinUrl { get; set; }
+    public int KidClassID { get; set; }
+    public KidClass Class { get; set; }
 }
