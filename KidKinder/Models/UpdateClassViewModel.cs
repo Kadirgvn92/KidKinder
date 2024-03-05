@@ -1,6 +1,6 @@
-﻿namespace KidKinder.Entities;
+﻿namespace KidKinder.Models;
 
-public class KidClass
+public class UpdateClassViewModel
 {
     public int KidClassID { get; set; }
     public string Name { get; set; }
@@ -10,5 +10,4 @@ public class KidClass
     public string ClassTime { get; set; }
     public decimal TutionFee { get; set; }
     public string ImageUrl { get; set; }
-    public List<Booking> Bookings { get; set; }
 }

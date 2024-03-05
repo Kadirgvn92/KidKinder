@@ -1,0 +1,64 @@
+﻿@model List<KidClass>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+
+<div class="midde_cont">
+    <div class="container-fluid">
+        <div class="row column_title">
+            <div class="col-md-12">
+                <div class="page_title">
+                    <h2>Sınıf Bilgileri</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="white_shd full margin_bottom_30">
+                    <div class="full graph_head">
+                        <div class="heading1 margin_0">
+                            <h2>Sınıf bilgilerini buradan görüntüleyebilirsiniz.</h2>
+                        </div>
+                    </div>
+                    <div class="table_section padding_infor_info">
+                        <div class="table-responsive-sm">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Sınıf Adı</th>
+                                        <th scope="col">Açıklama</th>
+                                        <th scope="col">Yaş Aralığı</th>
+                                        <th scope="col">Kapasite</th>
+                                        <th scope="col">Sınıf Saatleri</th>
+                                        <th scope="col">Fiyat</th>
+                                        <th scope="col">Sil</th>
+                                        <th scope="col">Güncelle</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.Name
+                                            <td>@item.Description</td>
+                                            <td>@item.AgeOfKids</td>
+                                            <td>@item.TotalSeats</td>
+                                            <td>@item.ClassTime</td>
+                                            <td>@item.TutionFee</td>
+                                            <td><a href="/Feature/DeleteFeature/@item.KidClassID" class="btn btn-danger">Sil</a></td>
+                                            <td><a href="/Feature/UpdateFeature/@item.KidClassID" class="btn btn-warning">Güncelle</a></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
