@@ -1,0 +1,70 @@
+﻿
+@model UpdateClassViewModel
+
+@{
+    ViewData["Title"] = "UpdateClass";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="midde_cont">
+    <div class="container-fluid">
+        <div class="row column_title">
+            <div class="col-md-12">
+                <div class="page_title">
+                    <h2>Sınıf Bilgileri </h2>
+                </div>
+            </div>
+        </div>
+        <!-- row -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="white_shd full margin_bottom_30">
+                    <div class="full graph_head">
+                        <div class="heading1 margin_0">
+                            <h2>Sınıf bilgisini buradan değiştirebilirsiniz.</h2>
+                        </div>
+                    </div>
+                    <div class="table_section padding_infor_info">
+                        <div class="table-responsive-sm">
+                            <!-- table section -->
+                            <form method="post" enctype="multipart/form-data">
+                                <input type="hidden" asp-for="KidClassID"/>
+                                <input type="hidden" asp-for="ImageUrl"/>
+                                <div class="form-group p-1">
+                                    <label>Sınıf Adı</label>
+                                    <input type="text" class="form-control form-control-s" asp-for="Name" placeholder="Sınıf adı girin">
+                                </div>
+                                <div class="form-group p-1">
+                                    <label>Açıklama</label>
+                                    <input type="text" class="form-control form-control-s" asp-for="Description" placeholder="Sınıf açıklaması girin">
+                                </div>
+                                <div class="form-group p-1">
+                                    <label>Yaş Grubu</label>
+                                    <input type="text" class="form-control form-control-s" asp-for="AgeOfKids" placeholder="Yaş grubunu girin">
+                                </div>
+                                <div class="form-group p-1">
+                                    <label>Sınıf Kapasitesi</label>
+                                    <input type="text" class="form-control form-control-s" asp-for="TotalSeats" placeholder="Sınıf kapasitesi girin">
+                                </div>
+                                <div class="form-group p-1">
+                                    <label>Sınıf Saatleri</label>
+                                    <input type="text" class="form-control form-control-s" asp-for="ClassTime" placeholder="Sınıf saatlerini girin">
+                                </div>
+                                <div class="form-group p-1">
+                                    <label>Sınıf Ücreti</label>
+                                    <input type="text" class="form-control form-control-s" asp-for="TutionFee" placeholder="Sınıf ücretini girin">
+                                </div>
+                                <div class="form-group p-1">
+                                    <label>Sınıf Resmi</label>
+                                    <input type="file" class="form-control form-control-s" asp-for="Image" placeholder="Sınıf resmini girin">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Sınıf Güncelle</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
