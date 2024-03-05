@@ -14,7 +14,7 @@
             {
                 <div class="col-lg-4 mb-5">
                     <div class="card border-0 bg-light shadow-sm pb-2">
-                        <img class="card-img-top mb-2" height="250px" width="100px" src="@item.ImageUrl" alt="" />
+                        <img class="card-img-top mb-2" height="250px" width="100px" src="/classImages/@item.ImageUrl" alt="" />
                         <div class="card-body text-center">
                             <h4 class="card-title">@item.Name</h4>
                             <p class="card-text">
@@ -44,7 +44,7 @@
                                 <div class="col-6 py-1 text-right border-right">
                                     <strong>Eğitim Fiyatı</strong>
                                 </div>
-                                <div class="col-6 py-1">@item.TutionFee ₺ / Aylık</div>
+                                <div class="col-6 py-1">@item.TutionFee.ToString("N0") ₺</div>
                             </div>
                         </div>
                         <a href="" class="btn btn-primary px-4 mx-auto mb-4">Şimdi Kayıt Yap</a>

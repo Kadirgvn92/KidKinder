@@ -30,8 +30,15 @@ public class ClassController : Controller
         return View();  
     }
     [HttpPost]
-    public IActionResult CreateClass(CreateClassViewModel model)
+    public async Task<IActionResult> CreateClass(CreateClassViewModel model)
     {
+        var resource = Directory.GetCurrentDirectory();
+        var extension = Path.GetExtension(model.Image.FileName);
+        var imageName = Guid.NewGuid() + extension;
+        var savelocation = resource + "/wwwroot/classImages/" + imageName;
+        var stream = new FileStream(savelocation, FileMode.Create);
+        await model.Image.CopyToAsync(stream);
+
         KidClass classes = new KidClass
         {
             Name = model.Name,
@@ -39,7 +46,7 @@ public class ClassController : Controller
             TotalSeats = model.TotalSeats,
             ClassTime = model.ClassTime,
             Description = model.Description,
-            ImageUrl = model.ImageUrl,
+            ImageUrl = imageName,
             TutionFee = model.TutionFee
         };
 
