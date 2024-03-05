@@ -14,9 +14,14 @@ public class DashboardController : Controller
     public IActionResult Index()
     {
         var classes = _context.KidClasses.Count();
-        ViewBag.Classes = classes;
+        ViewBag.Class = classes;
         var teacher = _context.Teachers.Count();
         ViewBag.Teachers = teacher;
+        var kids = _context.Kids.Count();
+        ViewBag.Kids = kids;    
+        var capacity = _context.KidClasses.Sum(x => x.TotalSeats) - kids;
+        ViewBag.Capacity = capacity;
         return View();
     }
 }
+    

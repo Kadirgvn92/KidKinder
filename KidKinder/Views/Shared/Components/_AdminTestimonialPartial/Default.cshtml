@@ -1,0 +1,39 @@
+﻿@model List<Testimonial>
+
+<div class="col-md-6">
+    <div class="dark_bg full margin_bottom_30">
+        <div class="full graph_head">
+            <div class="heading1 margin_0">
+                <h2>Testimonial</h2>
+            </div>
+        </div>
+        <div class="full graph_revenue">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="content testimonial">
+                        <div id="testimonial_slider" class="carousel slide" data-ride="carousel">
+                            <!-- Wrapper for carousel items -->
+                            <div class="carousel-inner">
+                                @foreach (var item in Model)
+                                {
+                                    <div class="item carousel-item active carousel-item-left">
+                                        <div class="img-box"><img src="@item.ImageUrl" alt=""></div>
+                                        <p class="testimonial">@item.Comment</p>
+                                        <p class="overview"><b>@item.Name</b>@item.WhosParent</p>
+                                    </div>
+                                }
+                            </div>
+                            <!-- Carousel controls -->
+                            <a class="carousel-control left carousel-control-prev" href="#testimonial_slider" data-slide="prev">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a class="carousel-control right carousel-control-next" href="#testimonial_slider" data-slide="next">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
