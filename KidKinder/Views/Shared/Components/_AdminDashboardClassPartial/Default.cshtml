@@ -1,0 +1,19 @@
+﻿@model List<KidClass>
+
+<div class="col-md-6">
+    <div class="dash_blog">
+        <div class="dash_blog_inner">
+            <div class="dash_head">
+                <h3><span><i class="fa fa-calendar"></i>&nbsp; Son Eklenen Sınıflar</span><span class="plus_green_bt"><a href="/Class/Index">+</a></span></h3>
+            </div>
+            <div class="task_list_main">
+                <ul class="task_list">
+                    @foreach (var item in Model.OrderByDescending(x => x.CreatedDate).Take(6))
+                    {
+                        <li><a href="#" class="text-dark"> @item.Name - Sınıf Saati : @item.ClassTime - Kontenjan : @item.TotalSeats</a><br><strong class="font-weight-bold">@item.TutionFee.ToString("N0") ₺ </strong></li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

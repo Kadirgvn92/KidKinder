@@ -5,6 +5,7 @@ public class Kid
     public int KidID { get; set; }
     public string Name { get; set; }
     public short Age { get; set; }
+    public DateTime RegisterDate { get; set; }
     public int ParentID { get; set; }
     public Parent Parents { get; set; }
     public int KidClassID { get; set; }

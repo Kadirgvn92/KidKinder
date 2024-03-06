@@ -14,14 +14,21 @@
                         <div id="testimonial_slider" class="carousel slide" data-ride="carousel">
                             <!-- Wrapper for carousel items -->
                             <div class="carousel-inner">
+                                <div class="item carousel-item active">
+                                    <div class="img-box"><img src="/pluto-1.0.0/images/layout_img/user_img.jpg" alt=""></div>
+                                    <p class="testimonial">KidKinder Ana Okuluna Hoşgeldiniz</p>
+                                    <p class="overview"><b> Gürsoy GÜVEN</b>Okul Müdürü</p>
+                                </div>
                                 @foreach (var item in Model)
                                 {
-                                    <div class="item carousel-item active carousel-item-left">
+                                   
+                                    <div class="item carousel-item">
                                         <div class="img-box"><img src="@item.ImageUrl" alt=""></div>
                                         <p class="testimonial">@item.Comment</p>
                                         <p class="overview"><b>@item.Name</b>@item.WhosParent</p>
                                     </div>
                                 }
+
                             </div>
                             <!-- Carousel controls -->
                             <a class="carousel-control left carousel-control-prev" href="#testimonial_slider" data-slide="prev">
