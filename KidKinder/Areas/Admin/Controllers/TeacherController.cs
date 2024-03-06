@@ -20,8 +20,7 @@ public class TeacherController : Controller
 
     public IActionResult Index()
     {
-        var values = _context.Teachers.ToList();
-        
+        var values = _context.Teachers.Include(x => x.Class).ToList();
         return View(values);
     }
     public IActionResult DeleteTeacher(int id)
@@ -62,7 +61,6 @@ public class TeacherController : Controller
            InstagramUrl = model.InstagramUrl,
            LinkedinUrl = model.LinkedinUrl,
            ImageUrl = imageName,
-           KidClassID = model.KidClassID
         };
 
         _context.Teachers.Add(teacher);

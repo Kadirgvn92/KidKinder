@@ -11,4 +11,3 @@ public class ResultTeacherViewModel
     public string InstagramUrl { get; set; }
     public string LinkedinUrl { get; set; }
 }
-}

@@ -19,7 +19,6 @@ public class KidController : Controller
     public IActionResult Index()
     {
         var values = _context.Kids.ToList();
-
         return View(values);
     }
     public IActionResult DeleteKid(int id)
