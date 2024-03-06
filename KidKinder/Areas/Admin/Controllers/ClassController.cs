@@ -2,7 +2,11 @@
 using KidKinder.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace KidKinder.Controllers;
+namespace KidKinder.Areas.Admin.Controllers;
+
+
+[Area("Admin")]
+[Route("Admin/[controller]/[action]/{id?}")]
 public class ClassController : Controller
 {
     private readonly Context _context;
@@ -83,7 +87,7 @@ public class ClassController : Controller
     {
         var values = _context.KidClasses.FirstOrDefault(x => x.KidClassID == model.KidClassID);
 
-        if(model.Image != null)
+        if (model.Image != null)
         {
             var resource = Directory.GetCurrentDirectory();
             var extension = Path.GetExtension(model.Image.FileName);
@@ -93,7 +97,7 @@ public class ClassController : Controller
             await model.Image.CopyToAsync(stream);
             model.ImageUrl = imageName;
         }
-        
+
 
         values.Name = model.Name;
         values.TotalSeats = model.TotalSeats;

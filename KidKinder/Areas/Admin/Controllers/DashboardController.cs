@@ -1,7 +1,10 @@
 ﻿using KidKinder.Entities;
 using Microsoft.AspNetCore.Mvc;
 
-namespace KidKinder.Controllers;
+namespace KidKinder.Areas.Admin.Controllers;
+
+[Area("Admin")]
+[Route("Admin/[controller]/[action]/{id?}")]
 public class DashboardController : Controller
 {
     private readonly Context _context;
@@ -18,10 +21,9 @@ public class DashboardController : Controller
         var teacher = _context.Teachers.Count();
         ViewBag.Teachers = teacher;
         var kids = _context.Kids.Count();
-        ViewBag.Kids = kids;    
+        ViewBag.Kids = kids;
         var capacity = _context.KidClasses.Sum(x => x.TotalSeats) - kids;
         ViewBag.Capacity = capacity;
         return View();
     }
 }
-    

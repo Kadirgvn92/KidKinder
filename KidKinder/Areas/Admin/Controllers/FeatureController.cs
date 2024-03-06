@@ -2,7 +2,10 @@
 using KidKinder.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace KidKinder.Controllers;
+namespace KidKinder.Areas.Admin.Controllers;
+
+[Area("Admin")]
+[Route("Admin/[controller]/[action]/{id?}")]
 public class FeatureController : Controller
 {
     private readonly Context _context;
