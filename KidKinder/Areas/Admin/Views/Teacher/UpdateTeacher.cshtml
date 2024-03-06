@@ -33,9 +33,14 @@
                                     <label>Öğretmen Adı</label>
                                     <input type="text" class="form-control form-control-s" asp-for="Name" placeholder="Öğretmen Adını girin">
                                 </div>
+
                                 <div class="form-group p-1">
                                     <label>Branşı</label>
                                     <input type="text" class="form-control form-control-s" asp-for="Branch" placeholder="Branşı girin">
+                                </div>
+                                <div class="form-group p-1">
+                                    <label>Sınıf</label>
+                                    @Html.DropDownListFor(x => x.KidClassID, (List<SelectListItem>)ViewBag.v, new { @class = "form-control" })
                                 </div>
                                 <div class="form-group p-1">
                                     <label>Facebook Url</label>
@@ -53,7 +58,7 @@
                                     <label>Öğretmen Resmi</label>
                                     <input type="file" class="form-control form-control-s" asp-for="Image" placeholder="Öğretmen resmini girin">
                                 </div>
-                                <button type="submit" class="btn btn-primary">Öğretmen Kaydını Oluştur</button>
+                                <button type="submit" class="btn btn-primary">Öğretmen Kaydını Düzenle</button>
                             </form>
                         </div>
 

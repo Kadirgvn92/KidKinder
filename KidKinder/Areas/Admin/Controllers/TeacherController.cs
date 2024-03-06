@@ -20,11 +20,11 @@ public class TeacherController : Controller
 
     public IActionResult Index()
     {
-        var values = _context.Teachers.Include(x => x.Class).ToList();
-       
+        var values = _context.Teachers.ToList();
+        
         return View(values);
     }
-    public IActionResult DeleteClass(int id)
+    public IActionResult DeleteTeacher(int id)
     {
         var values = _context.Teachers.FirstOrDefault(x => x.TeacherID == id);
         _context.Teachers.Remove(values);
@@ -74,6 +74,14 @@ public class TeacherController : Controller
     public IActionResult UpdateTeacher(int id)
     {
         var values = _context.Teachers.FirstOrDefault(x => x.TeacherID == id);
+
+        List<SelectListItem> classes = (from x in _context.KidClasses.ToList()
+                                        select new SelectListItem
+                                        {
+                                            Text = x.Name,
+                                            Value = x.KidClassID.ToString()
+                                        }).ToList();
+        ViewBag.v = classes;
 
         if (values != null)
         {
