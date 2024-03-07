@@ -1,16 +1,17 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Data.Common;
 
 namespace KidKinder.Entities;
 
-public class Context : DbContext
+public class Context : IdentityDbContext<AppUser,AppRole,int>
 {
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.UseSqlServer("server=DESKTOP-A6C5CRN\\MSSQLSERVER01;database=KidKinderDb;Trusted_Connection=True;TrustServerCertificate=True");
     }
-
+    public DbSet<Admin> Admins { get; set; }
     public DbSet<Booking> Bookings { get; set; }
     public DbSet<KidClass> KidClasses { get; set; }
     public DbSet<Contact> Contacts { get; set; }
