@@ -1,4 +1,5 @@
 ﻿using KidKinder.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace KidKinder.Areas.Admin.Controllers;
