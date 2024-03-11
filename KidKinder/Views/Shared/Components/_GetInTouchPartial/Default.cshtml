@@ -1,0 +1,47 @@
+﻿
+
+@model List<GetInTouch>
+
+
+<div class="col-lg-5 mb-5">
+    <p>
+        STEM sınıflarıyla beraber çocuklarımızı yeni hayatlarına vizyon katarak yaratıcılıklarını ortaya çıkarmak için elimizden geleni yapıyoruz. Robotik kodlama ile geleceğin mesleği olan robotik ve yazılıma hazırlamayı amaçlıyoruz. 
+    </p>
+    @foreach(var item in Model)
+    {
+        <div class="d-flex">
+            <i class="fa fa-map-marker-alt d-inline-flex align-items-center justify-content-center bg-primary text-secondary rounded-circle"
+               style="width: 45px; height: 45px"></i>
+            <div class="pl-3">
+                <h5>Adres</h5>
+                <p>@item.Address</p>
+            </div>
+        </div>
+        <div class="d-flex">
+            <i class="fa fa-envelope d-inline-flex align-items-center justify-content-center bg-primary text-secondary rounded-circle"
+               style="width: 45px; height: 45px"></i>
+            <div class="pl-3">
+                <h5>Mail Adresi</h5>
+                <p>@item.Mail</p>
+            </div>
+        </div>
+        <div class="d-flex">
+            <i class="fa fa-phone-alt d-inline-flex align-items-center justify-content-center bg-primary text-secondary rounded-circle"
+               style="width: 45px; height: 45px"></i>
+            <div class="pl-3">
+                <h5>Telefon</h5>
+                <p>@item.Phone</p>
+            </div>
+        </div>
+        <div class="d-flex">
+            <i class="far fa-clock d-inline-flex align-items-center justify-content-center bg-primary text-secondary rounded-circle"
+               style="width: 45px; height: 45px"></i>
+            <div class="pl-3">
+                <h5>Opening Hours</h5>
+                <strong>@item.OpeningDays :</strong>
+                <p class="m-0">@item.OpeningHours</p>
+            </div>
+        </div>
+    }
+    
+</div>

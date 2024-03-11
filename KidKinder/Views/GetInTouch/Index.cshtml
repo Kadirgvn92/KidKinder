@@ -1,5 +1,5 @@
 ﻿
-
+@model SendMessageViewModel
 
 @{
     ViewData["Title"] = "Index";
@@ -25,91 +25,54 @@
                     <div id="success"></div>
                     <form name="sentMessage" id="contactForm" novalidate="novalidate">
                         <div class="control-group">
-                            <input type="text"
+                            <input type="text" asp-for="Name"
                                    class="form-control"
                                    id="name"
-                                   placeholder="Your Name"
+                                   placeholder="Ad Soyad"
                                    required="required"
-                                   data-validation-required-message="Please enter your name" />
+                                   data-validation-required-message="Lütfen adınızı yazın.." />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
-                            <input type="email"
+                            <input type="email" asp-for="Mail"
                                    class="form-control"
                                    id="email"
-                                   placeholder="Your Email"
+                                   placeholder="Mail Adresi"
                                    required="required"
-                                   data-validation-required-message="Please enter your email" />
+                                   data-validation-required-message="Lütfen mail adresinizi yazın.." />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
-                            <input type="text"
+                            <input type="text" asp-for="Subject"
                                    class="form-control"
                                    id="subject"
-                                   placeholder="Subject"
+                                   placeholder="Konu"
                                    required="required"
-                                   data-validation-required-message="Please enter a subject" />
+                                   data-validation-required-message="Lütfen konuyu yazın.." />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
-                            <textarea class="form-control"
+                            <textarea class="form-control" asp-for="Message"
                                       rows="6"
                                       id="message"
-                                      placeholder="Message"
+                                      placeholder="Mesaj"
                                       required="required"
-                                      data-validation-required-message="Please enter your message"></textarea>
+                                      data-validation-required-message="Lütfen mesajınızı yazın.."></textarea>
                             <p class="help-block text-danger"></p>
                         </div>
                         <div>
                             <button class="btn btn-primary py-2 px-4"
                                     type="submit"
                                     id="sendMessageButton">
-                                Send Message
+                                Mesaj Gönder
                             </button>
                         </div>
                     </form>
                 </div>
             </div>
 
+            @await Component.InvokeAsync("_GetInTouchPartial")
 
-            <div class="col-lg-5 mb-5">
-                <p>
-                    STEM sınıflarıyla beraber çocuklarımızı yeni hayatlarına vizyon katarak yaratıcılıklarını ortaya çıkarmak için elimizden geleni yapıyoruz. Robotik kodlama ile geleceğin mesleği olan robotik ve yazılıma hazırlamayı amaçlıyoruz. Bunların yanında geleneksel eğitimleride gözardı etmiyor en iyi hocalarımızla eğitim öğretim hayatına da hazır olmalarını sağlıyoruz.
-                </p>
-                <div class="d-flex">
-                    <i class="fa fa-map-marker-alt d-inline-flex align-items-center justify-content-center bg-primary text-secondary rounded-circle"
-                       style="width: 45px; height: 45px"></i>
-                    <div class="pl-3">
-                        <h5>Adres</h5>
-                        <p>Özlüce Mahallesi 50.Yıl Sokak No:1 Nilüfer / BURSA</p>
-                    </div>
-                </div>
-                <div class="d-flex">
-                    <i class="fa fa-envelope d-inline-flex align-items-center justify-content-center bg-primary text-secondary rounded-circle"
-                       style="width: 45px; height: 45px"></i>
-                    <div class="pl-3">
-                        <h5>Mail Adresi</h5>
-                        <p>kidkinder@KidKinder.com</p>
-                    </div>
-                </div>
-                <div class="d-flex">
-                    <i class="fa fa-phone-alt d-inline-flex align-items-center justify-content-center bg-primary text-secondary rounded-circle"
-                       style="width: 45px; height: 45px"></i>
-                    <div class="pl-3">
-                        <h5>Phone</h5>
-                        <p>+012 345 67890</p>
-                    </div>
-                </div>
-                <div class="d-flex">
-                    <i class="far fa-clock d-inline-flex align-items-center justify-content-center bg-primary text-secondary rounded-circle"
-                       style="width: 45px; height: 45px"></i>
-                    <div class="pl-3">
-                        <h5>Opening Hours</h5>
-                        <strong>Sunday - Friday:</strong>
-                        <p class="m-0">08:00 AM - 05:00 PM</p>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>
