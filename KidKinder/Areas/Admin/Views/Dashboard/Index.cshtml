@@ -3,6 +3,7 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
+
 <div class="midde_cont">
     <div class="container-fluid">
         <div class="row column_title">
@@ -82,6 +83,12 @@
             @await Component.InvokeAsync("_AdminTestimonialPartial")
 
         </div>
+        <div class="row column3">
+
+            <div id="chart_div" style="width: 900px; height: 500px;"></div>
+
+        </div>
+
         <!-- graph -->
         <!-- end graph -->
         <div class="row column3">
@@ -93,4 +100,42 @@
         </div>
 
     </div>
-    </div>
+</div>
+
+
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+    google.charts.load('current', { 'packages': ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        $.ajax({
+            type: 'GET',
+            url: '@Url.Action("GetStudentClassData", "Dashboard")',
+            success: function (chartsData) {
+                var Data = chartsData.jsonList;
+                var data = new google.visualization.DataTable();
+
+                data.addColumn('string', 'ClassName');
+                data.addColumn('number', 'Capacity');
+
+                for (var i = 0; i < Data.length; i++) {
+                    data.addRow([Data[i].ClassName, Data[i].Capacity]);
+                }
+
+                var options = {
+                    title: 'Student Classes Chart',
+                };
+
+                var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+                chart.draw(data, options);
+            },
+            error: function (error) {
+                console.error('Error fetching data:', error);
+                console.log(data);
+            }
+        });
+    }
+</script>

@@ -1,4 +1,5 @@
 ﻿using KidKinder.Entities;
+using KidKinder.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -25,6 +26,19 @@ public class DashboardController : Controller
         ViewBag.Kids = kids;
         var capacity = _context.KidClasses.Sum(x => x.TotalSeats) - kids;
         ViewBag.Capacity = capacity;
+
+
         return View();
+    }
+    public IActionResult GetStudentClassData()
+    {
+        var values = _context.KidClasses.Select(x => new GoogleChartViewModel 
+        {
+            ClassName = x.Name,
+            Capacity = x.TotalSeats,
+
+        }).ToList();
+
+        return Json(new { jsonList = values });
     }
 }
