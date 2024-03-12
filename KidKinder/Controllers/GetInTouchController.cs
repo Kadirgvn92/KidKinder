@@ -28,8 +28,10 @@ public class GetInTouchController : Controller
                 Mail = model.Mail,
                 Name = model.Name,
                 Subject = model.Subject,
-                SendDate = Convert.ToDateTime(DateTime.Now.ToShortDateString())
+                SendDate = Convert.ToDateTime(DateTime.Now.ToShortDateString()),
+                IsRead = false
             });
+            _context.SaveChanges();
             return RedirectToAction("Index", "Default");
         }
         return View();
