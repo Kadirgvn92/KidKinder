@@ -1,0 +1,57 @@
+﻿
+@model UpdateKidViewModel
+
+@{
+    ViewData["Title"] = "UpdateKid";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="midde_cont">
+    <div class="container-fluid">
+        <div class="row column_title">
+            <div class="col-md-12">
+                <div class="page_title">
+                    <h2>Öğrenci Bilgileri </h2>
+                </div>
+            </div>
+        </div>
+        <!-- row -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="white_shd full margin_bottom_30">
+                    <div class="full graph_head">
+                        <div class="heading1 margin_0">
+                            <h2>Öğrenci bilgisini buradan güncelleyebilirsiniz.</h2>
+                        </div>
+                    </div>
+                    <div class="table_section padding_infor_info">
+                        <div class="table-responsive-sm">
+                            <!-- table section -->
+                            <form method="post" enctype="multipart/form-data">
+                                <input type="hidden" asp-for="KidID"/>
+                                <div class="form-group p-1">
+                                    <label>Öğrenci Adı</label>
+                                    <input type="text" class="form-control form-control-s" asp-for="Name" placeholder="Öğrenci adı girin">
+                                </div>
+                                <div class="form-group p-1">
+                                    <label>Yaşı</label>
+                                    <input type="text" class="form-control form-control-s" asp-for="Age" placeholder="Öğrenci yaşını girin">
+                                </div>
+                                <div class="form-group p-1">
+                                    <label>Ebeveyn</label>
+                                    @Html.DropDownListFor(x => x.ParentID, (List<SelectListItem>)ViewBag.v1, new { @class = "form-control" })
+                                </div>
+                                <div class="form-group p-1">
+                                    <label>Sınıf</label>
+                                    @Html.DropDownListFor(x => x.KidClassID, (List<SelectListItem>)ViewBag.v2, new { @class = "form-control" })
+                                </div>
+                                <button type="submit" class="btn btn-primary">Öğrenci Kayıt Düzenle</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
