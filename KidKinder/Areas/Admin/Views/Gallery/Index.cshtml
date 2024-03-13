@@ -21,13 +21,15 @@
             <div class="col-md-12">
                 <div class="white_shd full margin_bottom_30">
                     <div class="full graph_head">
-                        <div class="heading1 margin_0 ">
-                            <div class="d-flex justify-content-around">
+                        <div class="row justify-content-between align-items-center">
+                            <div class="col-auto">
                                 <h2>Galeri Ekranı</h2>
-                                <a href="/Gallery/AddImage" class="btn btn-primary">Resim Ekle</a>
                             </div>
-                          
+                            <div class="col-auto">
+                                <a href="/Admin/Gallery/CreateImage" class="btn btn-primary btn-lg"><i class="fa fa-plus"></i> &nbsp; Resim Ekle</a>
+                            </div>
                         </div>
+
                     </div>
                     <div class="full gallery_section_inner padding_infor_info">
                         <div class="row">
@@ -35,12 +37,14 @@
                             {
                                 <div class="col-sm-4 col-md-3 margin_bottom_30">
                                     <div class="column">
-                                        <a data-fancybox="gallery" href="@item.ImageUrl"><img class="img-responsive" src="@item.ImageUrl" alt="#" /></a>
+                                        <a data-fancybox="gallery" href="/galleryImages/@item.ImageUrl">
+                                            <img class="img-responsive" height="250px" width="500px" src="/galleryImages/@item.ImageUrl" alt="#" />
+                                        </a>
                                     </div>
                                     <div class="heading_section d-flex justify-content-around">
-                                        <h4>@item.ImageName</h4>
+                                        <a href="/Admin/Gallery/DeleteImage/@item.GalleryID" class="btn btn-danger mt-2 mb-2">Sil</a>
                                         <div class="mt-2">
-                                            @if(item.Status == true)
+                                            @if (item.Status == true)
                                             {
                                                 <a href="/Admin/Gallery/MakeItFalse/@item.GalleryID" class="btn btn-warning">Pasif Yap</a>
                                             }
@@ -48,7 +52,7 @@
                                             {
                                                 <a href="/Admin/Gallery/MakeItTrue/@item.GalleryID" class="btn btn-success">Aktif Yap</a>
                                             }
-                                            
+
                                         </div>
                                     </div>
                                 </div>

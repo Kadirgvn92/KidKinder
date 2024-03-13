@@ -32,7 +32,6 @@
 
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="wwwroot\galleryImages\" />
     <Folder Include="wwwroot\teacherImages\" />
   </ItemGroup>
 

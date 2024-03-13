@@ -1,4 +1,6 @@
-﻿using KidKinder.Entities;
+﻿using KidKinder.Areas.Admin.Models;
+using KidKinder.Entities;
+using KidKinder.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace KidKinder.Controllers;
@@ -16,8 +18,5 @@ public class GalleryController : Controller
         var values = _context.Galleries.Where(x => x.Status == true).ToList();
         return View(values);
     }
-    public IActionResult AddImage()
-    {
 
-    }
 }
