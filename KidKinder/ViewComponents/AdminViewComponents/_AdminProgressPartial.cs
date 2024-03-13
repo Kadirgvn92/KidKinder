@@ -17,8 +17,8 @@ public class _AdminProgressPartial : ViewComponent
     {
         var capacity = _context.KidClasses.Select(x => new ProgressBarViewModel{
             ClassName = x.Name,
-            Capacity = ((double)x.Kids.Count / x.TotalSeats) * 100 
+            Capacity = (double)((x.Kids.Count / (double)x.TotalSeats) * 100) 
         }).ToList();
         return View(capacity);  
-    }
+    }   
 }

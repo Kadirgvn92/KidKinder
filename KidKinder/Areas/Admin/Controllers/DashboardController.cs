@@ -27,12 +27,6 @@ public class DashboardController : Controller
         var capacity = _context.KidClasses.Sum(x => x.TotalSeats) - kids;
         ViewBag.Capacity = capacity;
 
-        var c = _context.KidClasses.Select(x => x.Name).ToList();
-        ViewBag.c = c;
-
-        var s = _context.KidClasses.Select(x =>x.TotalSeats).ToList();
-        ViewBag.s = s;  
-
         return View();
     }
     

@@ -1,17 +1,18 @@
-﻿@model List<Teacher>
+﻿
+@model List<Parent>
 
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
-    int count = 0;
 }
+
 
 <div class="midde_cont">
     <div class="container-fluid">
         <div class="row column_title">
             <div class="col-md-12">
                 <div class="page_title">
-                    <h2>Öğretmenler Kısmı</h2>
+                    <h2>Ebeveyn Kısmı</h2>
                 </div>
             </div>
         </div>
@@ -22,7 +23,7 @@
                 <div class="white_shd full margin_bottom_30">
                     <div class="full graph_head">
                         <div class="heading1 margin_0">
-                            <h2>Öğretmen Kısmını buradan görüntüleyebilirsiniz.</h2>
+                            <h2>Ebeveyn kısmını buradan görüntüleyebilirsiniz.</h2>
                         </div>
                     </div>
                     <div class="table_section padding_infor_info">
@@ -30,12 +31,12 @@
                             <table class="table table-striped text-dark">
                                 <thead>
                                     <tr>
-                                        <th scope="col">#</th>
                                         <th scope="col">Ad Soyad</th>
-                                        <th scope="col">Branş</th>
-                                        <th scope="col">Facebook</th>
-                                        <th scope="col">Instagram</th>
-                                        <th scope="col">Linkedin</th>
+                                        <th scope="col">Telefon</th>
+                                        <th scope="col">2.Telefon</th>
+                                        <th scope="col">Mail</th>
+                                        <th scope="col">Adres</th>
+                                        <th scope="col">Toplam Borç</th>
                                         <th scope="col">Sil</th>
                                         <th scope="col">Güncelle</th>
                                     </tr>
@@ -43,22 +44,21 @@
                                 <tbody>
                                     @foreach (var item in Model)
                                     {
-                                        count++;
                                         <tr>
-                                            <td>@count</td>
                                             <td>@item.Name</td>
-                                            <td>@item.Branch</td>
-                                            <td>@item.FacebookUrl</td>
-                                            <td>@item.InstagramUrl</td>
-                                            <td>@item.LinkedinUrl</td>
-                                            <td><a href="/Admin/Teacher/DeleteTeacher/@item.TeacherID" class="btn btn-danger">Sil</a></td>
-                                            <td><a href="/Admin/Teacher/UpdateTeacher/@item.TeacherID" class="btn btn-warning">Güncelle</a></td>
+                                            <td>@item.Phone</td>
+                                            <td>@item.SecondPhone</td>
+                                            <td>@item.Mail</td>
+                                            <td>@item.Address</td>
+                                            <td>@item.TotalDebt</td>
+                                            <td><a href="/Admin/Parent/DeleteParent/@item.ParentID" class="btn btn-danger">Sil</a></td>
+                                            <td><a href="/Admin/Parent/UpdateParent/@item.ParentID" class="btn btn-warning">Güncelle</a></td>
                                         </tr>
                                     }
                                 </tbody>
                             </table>
                         </div>
-                        <a href="/Admin/Teacher/CreateTeacher" class="btn btn-primary">Öğretmen Kaydı Yap</a>
+                        <a href="/Admin/Parent/CreateParent" class="btn btn-primary">Ebeveyn Kaydı Yap</a>
                     </div>
 
                 </div>
