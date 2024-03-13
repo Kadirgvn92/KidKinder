@@ -1,0 +1,74 @@
+﻿
+@model List<KidClass>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UILayout.cshtml";
+}
+
+
+<div class="container-fluid bg-primary mb-5">
+    <div class="d-flex flex-column align-items-center justify-content-center"
+         style="min-height: 400px">
+        <h3 class="display-3 font-weight-bold text-white">Sınıflarımız</h3>
+        <div class="d-inline-flex text-white">
+            <p class="m-0"><a class="text-white" href="">Ana Sayfa</a></p>
+            <p class="m-0 px-2">/</p>
+            <p class="m-0">Sınıflarımız</p>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid pt-5">
+    <div class="container">
+        <div class="text-center pb-2">
+            <p class="section-title px-5">
+                <span class="px-2">Popüler Sınıflar</span>
+            </p>
+            <h1 class="mb-4">Çocuklarınız için Sınıflar</h1>
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 mb-5">
+                    <div class="card border-0 bg-light shadow-sm pb-2">
+                        <img class="card-img-top mb-2" height="250px" width="100px" src="/classImages/@item.ImageUrl" alt="" />
+                        <div class="card-body text-center">
+                            <h4 class="card-title">@item.Name</h4>
+                            <p class="card-text">
+                                @item.Description
+                            </p>
+                        </div>
+                        <div class="card-footer bg-transparent py-4 px-5">
+                            <div class="row border-bottom">
+                                <div class="col-6 py-1 text-right border-right">
+                                    <strong>Yaş Grubu</strong>
+                                </div>
+                                <div class="col-6 py-1">@item.AgeOfKids Yaş</div>
+                            </div>
+                            <div class="row border-bottom">
+                                <div class="col-6 py-1 text-right border-right">
+                                    <strong>Sınıf Kapasitesi</strong>
+                                </div>
+                                <div class="col-6 py-1">@item.TotalSeats</div>
+                            </div>
+                            <div class="row border-bottom">
+                                <div class="col-6 py-1 text-right border-right">
+                                    <strong>Sınıf Saatleri</strong>
+                                </div>
+                                <div class="col-6 py-1">@item.ClassTime</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 py-1 text-right border-right">
+                                    <strong>Eğitim Fiyatı</strong>
+                                </div>
+                                <div class="col-6 py-1">@item.TutionFee.ToString("N0") ₺</div>
+                            </div>
+                        </div>
+                        <a href="" class="btn btn-primary px-4 mx-auto mb-4">Şimdi Kayıt Yap</a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
