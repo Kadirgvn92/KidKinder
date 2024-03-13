@@ -83,9 +83,15 @@
             @await Component.InvokeAsync("_AdminTestimonialPartial")
 
         </div>
-        <div class="row column3">
+        <div class="row column3 margin_bottom_30">
+            <div class="col-md-6 ">
 
-            <div id="chart_div" style="width: 900px; height: 500px;"></div>
+                <div id="chart_div" style="width: 750px; height: 500px;"></div>
+            </div>
+            <div class="col-md-6">
+
+                <div id="chart_div2" style="width: 750px; height: 500px;"></div>
+            </div>
 
         </div>
 
@@ -111,31 +117,30 @@
     google.charts.setOnLoadCallback(drawChart);
 
     function drawChart() {
-        $.ajax({
-            type: 'GET',
-            url: '@Url.Action("GetStudentClassData", "Dashboard")',
-            success: function (chartsData) {
-                var Data = chartsData.jsonList;
-                var data = new google.visualization.DataTable();
+        var data = new google.visualization.DataTable();
 
-                data.addColumn('string', 'ClassName');
-                data.addColumn('number', 'Capacity');
+        data.addColumn('string', 'ClassName');
+        data.addColumn('number', 'Capacity');
 
-                for (var i = 0; i < Data.length; i++) {
-                    data.addRow([Data[i].ClassName, Data[i].Capacity]);
-                }
+        data.addRows([
+            ['Öğrenci Sayısı', @ViewBag.Kids],
+            ['Kapasite', @ViewBag.Capacity],
+            ['Sınıf Sayısı',@ViewBag.Class]
+        ]);
 
-                var options = {
-                    title: 'Student Classes Chart',
-                };
+        var options = {
+            title: 'Student Classes Chart',
+        };
 
-                var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-                chart.draw(data, options);
-            },
-            error: function (error) {
-                console.error('Error fetching data:', error);
-                console.log(data);
-            }
-        });
+        var options2 = {
+            title:'Kapasite Durumu',
+            is3D: true,
+        }
+
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        var chart2 = new google.visualization.PieChart(document.getElementById('chart_div2'));
+        chart.draw(data, options);
+        chart2.draw(data, options2);
+
     }
 </script>

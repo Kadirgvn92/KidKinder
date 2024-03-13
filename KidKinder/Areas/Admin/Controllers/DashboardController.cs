@@ -27,18 +27,13 @@ public class DashboardController : Controller
         var capacity = _context.KidClasses.Sum(x => x.TotalSeats) - kids;
         ViewBag.Capacity = capacity;
 
+        var c = _context.KidClasses.Select(x => x.Name).ToList();
+        ViewBag.c = c;
+
+        var s = _context.KidClasses.Select(x =>x.TotalSeats).ToList();
+        ViewBag.s = s;  
 
         return View();
     }
-    public IActionResult GetStudentClassData()
-    {
-        var values = _context.KidClasses.Select(x => new GoogleChartViewModel 
-        {
-            ClassName = x.Name,
-            Capacity = x.TotalSeats,
-
-        }).ToList();
-
-        return Json(new { jsonList = values });
-    }
+    
 }
