@@ -1,0 +1,61 @@
+﻿
+@model List<Booking>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="midde_cont">
+    <div class="container-fluid">
+        <div class="row column_title">
+            <div class="col-md-12">
+                <div class="page_title">
+                    <h2>Kayıt İstek Kısmı</h2>
+                </div>
+            </div>
+        </div>
+        <!-- row -->
+        <div class="row">
+            <!-- table section -->
+            <div class="col-md-12">
+                <div class="white_shd full margin_bottom_30">
+                    <div class="full graph_head">
+                        <div class="heading1 margin_0">
+                            <h2>Kayıt isteklerini buradan görüntüleyebilirsiniz.</h2>
+                        </div>
+                    </div>
+                    <div class="table_section padding_infor_info">
+                        <div class="table-responsive-sm">
+                            <table class="table table-striped text-dark">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Ad Soyad</th>
+                                        <th scope="col">Mail Adresi</th>
+                                        <th scope="col">Telefon</th>
+                                        <th scope="col">Sınıf</th>
+                                        <th scope="col">Sil</th>
+                                        <th scope="col">Güncelle</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.Name</td>
+                                            <td>@item.Mail</td>
+                                            <td>@item.Phone</td>
+                                            <td>@item.Class.Name</td>
+                                            <td><a href="/Admin/Teacher/DeleteTeacher/@item.BookingID" class="btn btn-danger">Sil</a></td>
+                                            <td><a href="/Admin/Teacher/UpdateTeacher/@item.BookingID" class="btn btn-success">Güncelle</a></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

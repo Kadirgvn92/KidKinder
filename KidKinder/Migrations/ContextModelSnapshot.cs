@@ -40,7 +40,7 @@ namespace KidKinder.Migrations
 
                     b.HasKey("AdminID");
 
-                    b.ToTable("Admins");
+                    b.ToTable("Admins", (string)null);
                 });
 
             modelBuilder.Entity("KidKinder.Entities.AppRole", b =>
@@ -173,7 +173,7 @@ namespace KidKinder.Migrations
 
                     b.HasIndex("ClassID");
 
-                    b.ToTable("Bookings");
+                    b.ToTable("Bookings", (string)null);
                 });
 
             modelBuilder.Entity("KidKinder.Entities.Contact", b =>
@@ -208,7 +208,7 @@ namespace KidKinder.Migrations
 
                     b.HasKey("ContactID");
 
-                    b.ToTable("Contacts");
+                    b.ToTable("Contacts", (string)null);
                 });
 
             modelBuilder.Entity("KidKinder.Entities.Feature", b =>
@@ -237,7 +237,7 @@ namespace KidKinder.Migrations
 
                     b.HasKey("FeatureID");
 
-                    b.ToTable("Features");
+                    b.ToTable("Features", (string)null);
                 });
 
             modelBuilder.Entity("KidKinder.Entities.Gallery", b =>
@@ -261,7 +261,7 @@ namespace KidKinder.Migrations
 
                     b.HasKey("GalleryID");
 
-                    b.ToTable("Galleries");
+                    b.ToTable("Galleries", (string)null);
                 });
 
             modelBuilder.Entity("KidKinder.Entities.GetInTouch", b =>
@@ -294,7 +294,7 @@ namespace KidKinder.Migrations
 
                     b.HasKey("GetInTouchID");
 
-                    b.ToTable("GetInTouches");
+                    b.ToTable("GetInTouches", (string)null);
                 });
 
             modelBuilder.Entity("KidKinder.Entities.Kid", b =>
@@ -327,7 +327,7 @@ namespace KidKinder.Migrations
 
                     b.HasIndex("ParentID");
 
-                    b.ToTable("Kids");
+                    b.ToTable("Kids", (string)null);
                 });
 
             modelBuilder.Entity("KidKinder.Entities.KidClass", b =>
@@ -369,7 +369,7 @@ namespace KidKinder.Migrations
 
                     b.HasKey("KidClassID");
 
-                    b.ToTable("KidClasses");
+                    b.ToTable("KidClasses", (string)null);
                 });
 
             modelBuilder.Entity("KidKinder.Entities.Parent", b =>
@@ -407,7 +407,7 @@ namespace KidKinder.Migrations
 
                     b.HasKey("ParentID");
 
-                    b.ToTable("Parents");
+                    b.ToTable("Parents", (string)null);
                 });
 
             modelBuilder.Entity("KidKinder.Entities.Teacher", b =>
@@ -449,7 +449,7 @@ namespace KidKinder.Migrations
 
                     b.HasIndex("KidClassID");
 
-                    b.ToTable("Teachers");
+                    b.ToTable("Teachers", (string)null);
                 });
 
             modelBuilder.Entity("KidKinder.Entities.Testimonial", b =>
@@ -478,7 +478,7 @@ namespace KidKinder.Migrations
 
                     b.HasKey("TestimonialID");
 
-                    b.ToTable("Testimonials");
+                    b.ToTable("Testimonials", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
