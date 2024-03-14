@@ -65,3 +65,7 @@ Bu güncellenmiş proje, KidKinder Anaokulu'nun ihtiyaçlarına göre özelleşt
 <br/>
 <img src="https://github.com/Kadirgvn92/KidKinder/blob/master/KidKinder/wwwroot/Screenshots/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202024-03-14%20154925.png" alt="alt text">
 <br/>
+<img src="https://github.com/Kadirgvn92/KidKinder/blob/master/KidKinder/wwwroot/Screenshots/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202024-03-14%20155000.png" alt="alt text">
+<br/>
+<img src="https://github.com/Kadirgvn92/KidKinder/blob/master/KidKinder/wwwroot/Screenshots/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202024-03-14%20155015.png" alt="alt text">
+<br/>
