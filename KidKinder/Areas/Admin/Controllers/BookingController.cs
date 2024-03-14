@@ -22,7 +22,7 @@ public class BookingController : Controller
     }
     public IActionResult CompleteBooking(int id)
     {
-        var values = _context.Bookings.FirstOrDefault(x => x.IsCompleted == false);
+        var values = _context.Bookings.FirstOrDefault(x => x.BookingID == id);
         values.IsCompleted = true;
         _context.SaveChanges();
         return RedirectToAction("Index");
