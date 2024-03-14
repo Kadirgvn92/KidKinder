@@ -6,6 +6,8 @@
     Layout = "~/Views/Shared/_UILayout.cshtml";
 }
 
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
 @await Component.InvokeAsync("_FeaturePartial")
 
 @await Component.InvokeAsync("_FacilitiyPartial")
@@ -111,3 +113,19 @@
         </p>
     </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    $('form').submit(function (e) {
+        e.preventDefault();
+        Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Kayıt Talebi Gönderildi",
+            showConfirmButton: false,
+            timer: 1200
+        });
+        this.submit();
+    });
+</script>

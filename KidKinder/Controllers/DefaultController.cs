@@ -27,7 +27,7 @@ public class DefaultController : Controller
         return View();
     }
     [HttpPost]
-    public IActionResult Index(CreateBookingViewModel model)
+    public async Task<IActionResult> Index(CreateBookingViewModel model)
     {
 
         Booking book = new Booking
@@ -40,6 +40,8 @@ public class DefaultController : Controller
 
         _context.Bookings.Add(book);
         _context.SaveChanges();
+
+        await Task.Delay(1500);
         return RedirectToAction("Index","Default");
     }
 }

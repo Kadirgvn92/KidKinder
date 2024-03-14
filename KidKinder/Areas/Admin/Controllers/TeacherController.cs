@@ -60,6 +60,7 @@ public class TeacherController : Controller
            FacebookUrl = model.FacebookUrl,
            InstagramUrl = model.InstagramUrl,
            LinkedinUrl = model.LinkedinUrl,
+           KidClassID = model.KidClassID,
            ImageUrl = imageName,
         };
 

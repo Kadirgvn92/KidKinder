@@ -17,7 +17,26 @@ public class BookingController : Controller
 
     public IActionResult Index()
     {
-        var values = _context.Bookings.Include(x => x.Class).ToList();
+        var values = _context.Bookings.Include(x => x.Class).Where(x => x.IsCompleted == false).ToList();
         return View(values);
+    }
+    public IActionResult CompleteBooking(int id)
+    {
+        var values = _context.Bookings.FirstOrDefault(x => x.IsCompleted == false);
+        values.IsCompleted = true;
+        _context.SaveChanges();
+        return RedirectToAction("Index");
+    }
+    public IActionResult CompletedBooking()
+    {
+        var values = _context.Bookings.Include(x => x.Class).Where( x => x.IsCompleted == true).ToList();    
+        return View(values);
+    }
+    public IActionResult DeleteBooking(int id)
+    {
+        var values = _context.Bookings.FirstOrDefault(x => x.BookingID == id);
+        _context.Remove(values);
+        _context.SaveChanges(); 
+        return RedirectToAction("CompletedBooking");
     }
 }

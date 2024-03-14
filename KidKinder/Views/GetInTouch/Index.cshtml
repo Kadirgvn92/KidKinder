@@ -7,6 +7,8 @@
 }
 
 
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
 <div class="container-fluid bg-primary mb-5">
     <div class="d-flex flex-column align-items-center justify-content-center"
          style="min-height: 400px">
@@ -106,3 +108,19 @@
         </p>
     </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    $('form').submit(function (e) {
+        e.preventDefault();
+        Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Mesajınız Gönderildi",
+            showConfirmButton: false,
+            timer: 1200
+        });
+        this.submit();
+    });
+</script>

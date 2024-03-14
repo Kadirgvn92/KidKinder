@@ -18,7 +18,7 @@ public class GetInTouchController : Controller
         return View();
     }
     [HttpPost]
-    public IActionResult Index(SendMessageViewModel model)
+    public async Task<IActionResult> Index(SendMessageViewModel model)
     {
         if (ModelState.IsValid)
         {
@@ -32,6 +32,7 @@ public class GetInTouchController : Controller
                 IsRead = false
             });
             _context.SaveChanges();
+            await Task.Delay(1500);
             return RedirectToAction("Index", "Default");
         }
         return View();

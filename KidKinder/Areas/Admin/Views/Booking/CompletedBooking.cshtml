@@ -1,7 +1,7 @@
 ﻿@model List<Booking>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "CompletedBooking";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
@@ -21,7 +21,7 @@
                 <div class="white_shd full margin_bottom_30">
                     <div class="full graph_head">
                         <div class="heading1 margin_0">
-                            <h2>Kayıt isteklerini buradan görüntüleyebilirsiniz.</h2>
+                            <h2>Tamamlanan kayıt isteklerini buradan görüntüleyebilirsiniz.</h2>
                         </div>
                     </div>
                     <div class="table_section padding_infor_info">
@@ -32,7 +32,7 @@
 
                                     <hr class="" />
                                     <br />
-                                    <h5 class="text-center font-weight-bold text-danger">Kayıt isteği bulunmamaktadır.</h5>
+                                    <h5 class="text-center font-weight-bold text-danger">Tamamlanan Kayıt isteği bulunmamaktadır.</h5>
                                     <br />
                                     <br />
                                 </div>
@@ -58,7 +58,7 @@
                                                 <td>@item.Mail</td>
                                                 <td>@item.Phone</td>
                                                 <td>@item.Class.Name</td>
-                                                <td width="200px"><a href="/Admin/Booking/CompleteBooking/@item.BookingID" class="btn btn-success">Kaydı Tamamla</a></td>
+                                                <td width="200px"><a href="/Admin/Booking/DeleteBooking/@item.BookingID" class="btn btn-danger">Sil</a></td>
                                             </tr>
                                         }
                                     </tbody>
