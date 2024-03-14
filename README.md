@@ -49,4 +49,4 @@ Bu güncellenmiş proje, KidKinder Anaokulu'nun ihtiyaçlarına göre özelleşt
 
 ### Resimler
 
-<img src="" alt="alt text" width="320" height="180">
+<img src="/ScreenShot/Ekran görüntüsü 2024-03-14 154744.png" alt="alt text" width="320" height="180">
