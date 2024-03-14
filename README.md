@@ -43,19 +43,10 @@ Bu proje, Asp.Net MVC kullanarak geliştirilmiş bir anaokulu yönetim sistemidi
    - İletişim Mesajları Yönetimi: Site ziyaretçileri tarafından gönderilen iletişim mesajlarının yönetimini sağlar.
    - Kategori Yönetimi: İçeriklerin kategorize edilmesini sağlayan kategorilerin yönetimini sağlar.
    - Yazar Yönetimi: Proje yazarlarının yönetimini sağlar.
-
-2. **Öğretmen Paneli 📝**
-   - Öğretmenlerin öğrencilere yönelik içerik eklemelerini ve düzenlemelerini sağlayan bir arayüzdür.
-
-3. **Öğrenci Paneli 📖**
-   - Öğrencilere yönelik içeriklerin bulunduğu bir bölümdür. Öğrencilerin etkileşimde bulunabileceği içerikler sunar.
-
-4. **Veli Paneli 🌟**
-   - Veliye yönelik duyuruların yapıldığı ve öğrenciyle ilgili bilgilerin bulunduğu bir bölümdür.
-
 ---
 
 Bu güncellenmiş proje, KidKinder Anaokulu'nun ihtiyaçlarına göre özelleştirilmiş bir şekilde sunulmuştur. Bu sayede anaokulu yönetimi için gerekli olan temel işlevselliklerin sağlanması amaçlanmıştır.
 
 ### Resimler
 
+<img src="" alt="alt text" width="320" height="180">
