@@ -28,6 +28,7 @@
                             <table class="table table-striped text-dark">
                                 <thead >
                                     <tr class=" text-dark font-weight-bold">
+                                        <th scope="col">Foto</th>
                                         <th scope="col">Sınıf Adı</th>
                                         <th scope="col">Açıklama</th>
                                         <th scope="col">Yaş Aralığı</th>
@@ -42,14 +43,41 @@
                                     @foreach (var item in Model)
                                     {
                                         <tr>
-                                            <td>@item.Name
-                                            <td>@item.Description</td>
-                                            <td>@item.AgeOfKids</td>
-                                            <td>@item.TotalSeats</td>
-                                            <td>@item.ClassTime</td>
-                                            <td>@item.TutionFee</td>
-                                            <td width="120px"><a href="/Admin/Class/DeleteClass/@item.KidClassID" class="btn btn-danger">Sil</a></td>
-                                            <td width="120px"><a href="/Admin/Class/UpdateClass/@item.KidClassID" class="btn btn-warning">Güncelle</a></td>
+                                            <td class="align-middle">
+                                                <img src="/classImages/@item.ImageUrl" style="border-radius:50%" width="80px" height="80px" />
+                                            </td>
+                                            <td class="align-middle">
+                                                <span>
+                                                    @item.Name
+                                                </span>
+                                            </td>
+                                            <td class="align-middle">
+                                                <span>
+                                                    @item.Description
+                                                </span>
+                                            </td>
+                                            <td class="align-middle">
+                                                <span>
+                                                    @item.AgeOfKids
+                                                </span>
+                                            </td>
+                                            <td class="align-middle">
+                                                <span>
+                                                    @item.TotalSeats
+                                                </span>
+                                            </td>
+                                            <td class="align-middle">
+                                                <span>
+                                                    @item.ClassTime
+                                                </span>
+                                            </td>
+                                            <td class="align-middle">
+                                                <span>
+                                                    @item.TutionFee
+                                                </span>
+                                            </td>
+                                            <td class="align-middle" width="120px"><a href="/Admin/Class/DeleteClass/@item.KidClassID" class="btn btn-danger">Sil</a></td>
+                                            <td class="align-middle" width="120px"><a href="/Admin/Class/UpdateClass/@item.KidClassID" class="btn btn-warning">Güncelle</a></td>
                                         </tr>
                                     }
                                 </tbody>

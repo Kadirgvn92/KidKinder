@@ -4,6 +4,7 @@
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int count = 0;
 }
 
 
@@ -31,6 +32,7 @@
                             <table class="table table-striped text-dark">
                                 <thead>
                                     <tr>
+                                        <th scope="col">#</th>
                                         <th scope="col">Ad Soyad</th>
                                         <th scope="col">Telefon</th>
                                         <th scope="col">2.Telefon</th>
@@ -44,7 +46,9 @@
                                 <tbody>
                                     @foreach (var item in Model)
                                     {
+                                        count++;
                                         <tr>
+                                            <td>@count</td>
                                             <td>@item.Name</td>
                                             <td>@item.Phone</td>
                                             <td>@item.SecondPhone</td>
