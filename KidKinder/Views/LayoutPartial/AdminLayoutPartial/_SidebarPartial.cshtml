@@ -28,7 +28,6 @@
             <li><a href="/Admin/Teacher/Index"><i class="fa fa-user"></i> <span>Öğretmenler</span></a></li>
             <li><a href="/Admin/Kid/Index"><i class="fa fa-group red_color"></i> <span>Öğrenciler</span></a></li>
             <li> <a href="/Admin/Parent/Index"> <i class="fa fa-user-secret purple_color"></i> <span>Ebeveynler</span></a> </li>
-            <li> <a href="/Admin/Message/Index"> <i class="fa fa-paper-plane green_color"></i> <span>Mesajlar</span></a> </li>
 
             <li> <a href="/Admin/Gallery/Index"> <i class="fa fa-image white_color"></i> <span>Galeri</span></a> </li>
             <li class="active">
@@ -42,6 +41,17 @@
                     </li>
                     <li>
                         <a href="/Admin/Message/Index">> <span>İptal Edilen Kayıtlar</span></a>
+                    </li>
+                </ul>
+            </li>
+            <li class="active">
+                <a href="#message_page" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-paper-plane green_color"></i> <span>Mesajlar</span></a>
+                <ul class="collapse list-unstyled" id="message_page">
+                    <li>
+                        <a href="/Admin/Message/Index"> <span>Gelen Mesajlar</span></a>
+                    </li>
+                    <li>
+                        <a href="/Admin/Message/DoneMessage"> <span>Okunan Mesajlar</span></a>
                     </li>
                 </ul>
             </li>

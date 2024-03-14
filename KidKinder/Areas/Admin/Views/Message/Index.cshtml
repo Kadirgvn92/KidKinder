@@ -1,0 +1,59 @@
+﻿
+@model List<Contact>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="midde_cont">
+    <div class="container-fluid">
+        <div class="row column_title">
+            <div class="col-md-12">
+                <div class="page_title">
+                    <h2>Mesaj Bilgileri</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="white_shd full margin_bottom_30">
+                    <div class="full graph_head">
+                        <div class="heading1 margin_0">
+                            <h2>Mesaj bilgilerini buradan görüntüleyebilirsiniz.</h2>
+                        </div>
+                    </div>
+                    <div class="table_section padding_infor_info">
+                        <div class="table-responsive-sm">
+                            <table class="table table-striped text-dark">
+                                <thead>
+                                    <tr class=" text-dark font-weight-bold">
+                                        <th scope="col">Ad Soyad</th>
+                                        <th scope="col">Mail Adresi</th>
+                                        <th scope="col">Konu</th>
+                                        <th scope="col">Mesaj</th>
+                                        <th scope="col">Okundu Olarak İşaretle</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.Name</td>
+                                            <td>@item.Mail</td>
+                                            <td>@item.Subject</td>
+                                            <td>@item.Message</td>
+                                            <td width="200px"><a href="/Admin/Message/ReadMessage/@item.ContactID" class="btn btn-danger">Okundu İşaretle</a></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
