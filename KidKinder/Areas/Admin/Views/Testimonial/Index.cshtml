@@ -1,41 +1,37 @@
-﻿@model List<Teacher>
+﻿@model List<Testimonial>
 
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
-    int count = 0;
 }
+
 
 <div class="midde_cont">
     <div class="container-fluid">
         <div class="row column_title">
             <div class="col-md-12">
                 <div class="page_title">
-                    <h2>Öğretmenler Kısmı</h2>
+                    <h2>Yorum Bilgileri</h2>
                 </div>
             </div>
         </div>
-        <!-- row -->
         <div class="row">
-            <!-- table section -->
             <div class="col-md-12">
                 <div class="white_shd full margin_bottom_30">
                     <div class="full graph_head">
                         <div class="heading1 margin_0">
-                            <h2>Öğretmen Kısmını buradan görüntüleyebilirsiniz.</h2>
+                            <h2>Yorum bilgilerini buradan görüntüleyebilirsiniz.</h2>
                         </div>
                     </div>
                     <div class="table_section padding_infor_info">
                         <div class="table-responsive-sm">
                             <table class="table table-striped text-dark">
                                 <thead>
-                                    <tr>
+                                    <tr class=" text-dark font-weight-bold">
                                         <th scope="col">Foto</th>
                                         <th scope="col">Ad Soyad</th>
-                                        <th scope="col">Branş</th>
-                                        <th scope="col">Facebook</th>
-                                        <th scope="col">Instagram</th>
-                                        <th scope="col">Linkedin</th>
+                                        <th scope="col">Kimin Ebeveyni</th>
+                                        <th scope="col">Yorum</th>
                                         <th scope="col">Sil</th>
                                         <th scope="col">Güncelle</th>
                                     </tr>
@@ -45,7 +41,7 @@
                                     {
                                         <tr>
                                             <td class="align-middle">
-                                                <img src="/teacherImages/@item.ImageUrl" style="border-radius:50%" width="80px" height="80px" />
+                                                <img src="@item.ImageUrl" style="border-radius:50%" width="80px" height="80px" />
                                             </td>
                                             <td class="align-middle">
                                                 <span>
@@ -54,34 +50,25 @@
                                             </td>
                                             <td class="align-middle">
                                                 <span>
-                                                    @item.Branch
+                                                    @item.WhosParent
                                                 </span>
                                             </td>
                                             <td class="align-middle">
                                                 <span>
-                                                    @item.FacebookUrl
+                                                    @item.Comment
                                                 </span>
                                             </td>
-                                            <td class="align-middle">
-                                                <span>
-                                                    @item.InstagramUrl
-                                                </span>
-                                            </td>
-                                            <td class="align-middle">
-                                                <span>
-                                                    @item.LinkedinUrl
-                                                </span>
-                                            </td>
-                                            <td class="align-middle" width="120px"><a href="/Admin/Teacher/DeleteTeacher/@item.TeacherID" class="btn btn-danger">Sil</a></td>
-                                            <td class="align-middle" width="120px"><a href="/Admin/Teacher/UpdateTeacher/@item.TeacherID" class="btn btn-warning">Güncelle</a></td>
+                                            <td width="120px" class="align-middle">
+                                                <a href="/Admin/Testimonial/DeleteTestimonial/@item.TestimonialID" class="btn btn-danger">Sil</a>
+                                                </td>
+                                            <td width="120px" class="align-middle"><a href="/Admin/Testimonial/UpdateTestimonial/@item.TestimonialID" class="btn btn-warning">Güncelle</a></td>
                                         </tr>
                                     }
                                 </tbody>
                             </table>
                         </div>
-                        <a href="/Admin/Teacher/CreateTeacher" class="btn btn-primary">Öğretmen Kaydı Yap</a>
+                        <a href="/Admin/Testimonial/CreateTestimonial" class="btn btn-primary">Sınıf Oluştur</a>
                     </div>
-
                 </div>
             </div>
         </div>
