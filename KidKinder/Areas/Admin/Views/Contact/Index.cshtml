@@ -1,0 +1,79 @@
+﻿
+@model List<GetInTouch>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="midde_cont">
+    <div class="container-fluid">
+        <div class="row column_title">
+            <div class="col-md-12">
+                <div class="page_title">
+                    <h2>İletişim Bilgileri</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="white_shd full margin_bottom_30">
+                    <div class="full graph_head">
+                        <div class="heading1 margin_0">
+                            <h2>İletişim bilgilerini buradan görüntüleyebilirsiniz.</h2>
+                        </div>
+                    </div>
+                    <div class="table_section padding_infor_info">
+                        <div class="table-responsive-sm">
+                            <table class="table table-striped text-dark">
+                                <thead>
+                                    <tr class=" text-dark font-weight-bold">
+                                        <th scope="col">Adres</th>
+                                        <th scope="col">Mail</th>
+                                        <th scope="col">Telefon</th>
+                                        <th scope="col">Açık Saatler</th>
+                                        <th scope="col">Açık Günler</th>
+                                        <th scope="col">Güncelle</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td class="align-middle">
+                                                <span>
+                                                    @item.Address
+                                                </span>
+                                            </td>
+                                            <td class="align-middle">
+                                                <span>
+                                                    @item.Mail
+                                                </span>
+                                            </td>
+                                            <td class="align-middle">
+                                                <span>
+                                                    @item.Phone
+                                                </span>
+                                            </td>
+                                            <td class="align-middle">
+                                                <span>
+                                                    @item.OpeningHours
+                                                </span>
+                                            </td>
+                                            <td class="align-middle">
+                                                <span>
+                                                    @item.OpeningDays
+                                                </span>
+                                            </td>
+                                            <td><a href="/Admin/Contact/UpdateContact/@item.GetInTouchID" class="btn btn-warning">Güncelle</a></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
